@@ -1,3 +1,15 @@
+//	printf( blue "log::sityation::tipa_real::ffoo() [LOG]\n" );
+//	printf( green "create instance success! [SUCCESS INFO]\n" );
+//	printf( red "error: no such file of directory. [ERROR]\n" );
+//	printf( magenta "   VK_KHRONOS_VALIDATION_LAVER [LIST]\n" );
+//	printf( yellow "вероятны некоторые проблемы мб щас порешаем. [WARNING]\n" );
+//	printf( cyan "-- полёт нормальный [COMMENT]\n" );
+//	printf( rc gray "start end [TESTS]\n" );
+
+
+	//const uint32_t seconds_in_current_day = unix_timestamp_with_timezone - ((unix_timestamp_with_timezone / SECONDS_IN_DAY) * SECONDS_IN_DAY);
+
+
 
 
 
@@ -175,3 +187,213 @@
 //
 //
 //	printf("time = %ld\n", tp.tv_sec);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//HumanTime time_to_date2(const struct timespec *const timespec_pointer, const int8_t timezone)
+//{
+//	const size_t unix_timestamp = timespec_pointer->tv_sec + (timezone * SECONDS_IN_HOUR);
+//
+//	uint8_t isLeap = ((unix_timestamp / SECONDS_IN_YEAR) - 2) % 4;
+//	if (isLeap == 0)
+//	{
+//		isLeap = 1;// leap year
+//	}
+//	else
+//	{
+//		isLeap = 0;// not leap year
+//	}
+//
+//#define DAYS_IN_CURRENT_YEAR(unix_timestamp) ((((unix_timestamp / SECONDS_IN_DAY) - (((unix_timestamp / SECONDS_IN_YEAR) - 2) / 4)) + isLeap) % 365)
+//
+//#define SECONDS_IN_CURRENT_DAY(unix_timestamp) ((unix_timestamp) - (((unix_timestamp) / SECONDS_IN_DAY) * SECONDS_IN_DAY))
+//
+//#define HOUR_IN_CURRENT_DAY(unix_timestamp) (SECONDS_IN_CURRENT_DAY(unix_timestamp) / SECONDS_IN_HOUR)
+//
+//#define MINUTE_IN_CURRENT_HOUR(unix_timestamp) ((SECONDS_IN_CURRENT_DAY(unix_timestamp) - (HOUR_IN_CURRENT_DAY(unix_timestamp) * SECONDS_IN_HOUR)) / 60)
+//
+//#define SECOND_IN_CURRENT_MINUTE(unix_timestamp) (SECONDS_IN_CURRENT_DAY(unix_timestamp) - (HOUR_IN_CURRENT_DAY(unix_timestamp) * SECONDS_IN_HOUR) - (MINUTE_IN_CURRENT_HOUR(unix_timestamp) * 60))
+//
+//	if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 31)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 1, DAYS_IN_CURRENT_YEAR(unix_timestamp), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 59 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 2, DAYS_IN_CURRENT_YEAR(unix_timestamp) - 31, HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 90 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 3, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (59 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 120 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 4, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (90 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 151 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 5, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (120 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 181 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 6, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (151 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 212 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 7, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (181 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 243 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 8, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (212 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 273 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 9, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (243 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 304 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 10, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (273 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 334 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 11, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (304 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 365 + isLeap)
+//	{
+//		return (HumanTime) {(unix_timestamp / SECONDS_IN_YEAR) + 1970, 12, DAYS_IN_CURRENT_YEAR(unix_timestamp) - (334 + isLeap), HOUR_IN_CURRENT_DAY(unix_timestamp), MINUTE_IN_CURRENT_HOUR(unix_timestamp), SECOND_IN_CURRENT_MINUTE(unix_timestamp), timespec_pointer->tv_nsec};
+//	}
+//
+//
+//
+//	return (HumanTime) {0, 0, 0, 0, 0, 0, timespec_pointer->tv_nsec};
+//}
+
+
+
+
+
+
+
+
+//uint8_t time_to_date2(struct HumanTime *const humanTime, const struct timespec *const timespec_pointer, const int8_t timezone)
+//{
+//	const size_t unix_timestamp = timespec_pointer->tv_sec + (timezone * SECONDS_IN_HOUR);
+//
+//	uint8_t isLeap = ((unix_timestamp / SECONDS_IN_YEAR) - 2) % 4;
+//	if (isLeap == 0)
+//	{
+//		isLeap = 1;// leap year
+//	}
+//	else
+//	{
+//		isLeap = 0;// not leap year
+//	}
+//
+//#define DAYS_IN_CURRENT_YEAR(unix_timestamp) ((((unix_timestamp / SECONDS_IN_DAY) - (((unix_timestamp / SECONDS_IN_YEAR) - 2) / 4)) + isLeap) % 365)
+//
+//#define SECONDS_IN_CURRENT_DAY(unix_timestamp) ((unix_timestamp) - (((unix_timestamp) / SECONDS_IN_DAY) * SECONDS_IN_DAY))
+//
+//#define HOUR_IN_CURRENT_DAY(unix_timestamp) (SECONDS_IN_CURRENT_DAY(unix_timestamp) / SECONDS_IN_HOUR)
+//
+//#define MINUTE_IN_CURRENT_HOUR(unix_timestamp) ((SECONDS_IN_CURRENT_DAY(unix_timestamp) - (HOUR_IN_CURRENT_DAY(unix_timestamp) * SECONDS_IN_HOUR)) / 60)
+//
+//#define SECOND_IN_CURRENT_MINUTE(unix_timestamp) (SECONDS_IN_CURRENT_DAY(unix_timestamp) - (HOUR_IN_CURRENT_DAY(unix_timestamp) * SECONDS_IN_HOUR) - (MINUTE_IN_CURRENT_HOUR(unix_timestamp) * 60))
+//
+//	if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 31)
+//	{
+//		humanTime->month = 1;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 59 + isLeap)
+//	{
+//		humanTime->month = 2;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - 31;
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 90 + isLeap)
+//	{
+//		humanTime->month = 3;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (59 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 120 + isLeap)
+//	{
+//		humanTime->month = 4;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (90 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 151 + isLeap)
+//	{
+//		humanTime->month = 5;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (120 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 181 + isLeap)
+//	{
+//		humanTime->month = 6;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (151 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 212 + isLeap)
+//	{
+//		humanTime->month = 7;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (181 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 243 + isLeap)
+//	{
+//		humanTime->month = 8;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (212 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 273 + isLeap)
+//	{
+//		humanTime->month = 9;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (243 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 304 + isLeap)
+//	{
+//		humanTime->month = 10;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (273 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 334 + isLeap)
+//	{
+//		humanTime->month = 11;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (304 + isLeap);
+//	}
+//	else if (DAYS_IN_CURRENT_YEAR(unix_timestamp) <= 365 + isLeap)
+//	{
+//		humanTime->month = 12;
+//		humanTime->day = DAYS_IN_CURRENT_YEAR(unix_timestamp) - (334 + isLeap);
+//	}
+//
+//	humanTime->year = (unix_timestamp / SECONDS_IN_YEAR) + 1970;
+//	humanTime->hour = HOUR_IN_CURRENT_DAY(unix_timestamp);
+//	humanTime->minute = MINUTE_IN_CURRENT_HOUR(unix_timestamp);
+//	humanTime->second = SECOND_IN_CURRENT_MINUTE(unix_timestamp);
+//	humanTime->nanosecond = timespec_pointer->tv_nsec;
+//
+//
+//	return 0;
+//}
